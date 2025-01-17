@@ -1,7 +1,7 @@
 #!/bin/bash
 # netexec all protocols
-protos=("wmi" "rdp" "winrm" "ldap" "ssh" "mssql" "nfs" "smb" "ftp" "vnc")
-
+protos=("wmi" "rdp" "winrm" "ldap" "mssql" "smb")
+protos2=("ssh" "nfs" "ftp" "vnc")
 echo -n "Enter the username or name of file containing usernames: "
 read user
 echo -n "Enter the password or name of file containing passwords: "
@@ -38,6 +38,11 @@ if [[ "$ans" == "n" ]]; then
 fi
 
 for i in "${protos[@]}"; do 
+  echo "Running: netexec $i $ip -u \"$user\" -p \"$password\" -d \"$domain\" $brutey $cos"
+  netexec "$i" "$ip" -u "$user" -p "$password" -d "$domain" "$brutey" "$cos" 
+done
+
+for i in "${protos2[@]}"; do 
   echo "Running: netexec $i $ip -u \"$user\" -p \"$password\" -d \"$domain\" $brutey $cos"
   netexec "$i" "$ip" -u "$user" -p "$password" -d "$domain" "$brutey" "$cos" 
 done
