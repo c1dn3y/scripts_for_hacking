@@ -43,8 +43,8 @@ for i in "${protos[@]}"; do
 done
 
 for i in "${protos2[@]}"; do 
-  echo "Running: netexec $i $ip -u \"$user\" -p \"$password\" -d \"$domain\" $brutey $cos"
-  netexec "$i" "$ip" -u "$user" -p "$password" -d "$domain" "$brutey" "$cos" 
+  echo "Running: netexec $i $ip -u \"$user\" -p \"$password\" $brutey $cos"
+  netexec "$i" "$ip" -u "$user" -p "$password" "$brutey" "$cos" 
 done
 
 echo "Script finished."
