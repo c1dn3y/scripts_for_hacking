@@ -1,1 +1,1 @@
-# scripts_for_hacking
+# scripts for hacking
