@@ -1,6 +1,7 @@
 #!/bin/bash
-# netexec all protocols
+# netexec all protocols (sorta)
 protos=("wmi" "rdp" "winrm" "ldap" "mssql" "smb")
+# these protocols can't except the -d flag so i'm running them in a seperate for loop
 protos2=("ssh" "nfs" "ftp" "vnc")
 echo -n "Enter the username or name of file containing usernames: "
 read user
