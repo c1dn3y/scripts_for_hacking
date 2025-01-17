@@ -28,7 +28,7 @@ fi
 
 preview_command="netexec $i $ip -u \"$user\" -p \"$password\" -d \"$domain\" $brutey $cos"
 
-echo -n "Your command: $preview_command \n"
+printf "Your command: %s\n" "$preview_command"
 read -p "Is this what you want to run (y/n)? " ans
 
 if [[ "$ans" == "n" ]]; then 
