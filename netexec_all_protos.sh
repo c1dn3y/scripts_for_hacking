@@ -9,8 +9,21 @@ echo -n "Enter the domain: "
 read domain
 echo -n "Enter the target IP: "
 read ip
+echo -n "Brute force (y/n): "
+read brute
+if brute = y
+  brutey == ""
+  else 
+    brutey == "--no-brute"
+echo -n "Continue on success (y/n): "
+read brute
+if brute = y
+  cos == "--continue-on-success"
+  else 
+    cos == ""
+
 
 for i in ${protos[@]}; 
   do
-  netexec $i $ip -u $user -p $password -d $domain --no-brute --continue-on-success
+  netexec $i $ip -u $user -p $password -d $domain $brutey --continue-on-success
 done
